@@ -170,15 +170,4 @@ All 17 tests execute in < 6 seconds with **100% pass rate**, covering:
 
 ---
 
-## 🎤 Walkthrough & Assessment Preparation Notes
 
-During the 30-minute demonstration:
-1. **Request Lifecycle Flow:**
-   - React UI $\rightarrow$ `api.js` (Fetch + Bearer JWT) $\rightarrow$ FastAPI Router $\rightarrow$ Pydantic validation $\rightarrow$ CRUD Service $\rightarrow$ SQLAlchemy ORM $\rightarrow$ MySQL database.
-2. **Input Validation:**
-   - Handled at the schema layer with Pydantic v2 `@field_validator`. Custom exception formatters in `main.py` transform internal validation errors into clean HTTP 422 JSON payloads.
-3. **LLM Inference vs Model Training:**
-   - **LLM Inference (this project):** Sending a prompt to a pre-trained frozen model via an API endpoint, receiving a completion according to system prompt instructions and temperature parameters without updating neural network weights.
-   - **Model Training / Fine-Tuning:** Performing forward and backward passes using labeled training data and gradient descent to modify internal weights and parameters of the model.
-4. **AI Quality Assurance:**
-   - Enforced by schema contracts (Pydantic validation), strict date parsing, injection guardrails, and deterministic fallback rules.
